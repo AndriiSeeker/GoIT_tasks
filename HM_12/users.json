@@ -1,0 +1,62 @@
+[
+    {
+        "name": "Bastian Lange",
+        "phone": "(04282) 78513",
+        "birthday": "1988-07-02",
+        "email": "kunibert40@example.net"
+    },
+    {
+        "name": "Ing. Christian Biggen B.Eng.",
+        "phone": "(09604) 50945",
+        "birthday": "2002-10-13",
+        "email": "zbeckmann@example.org"
+    },
+    {
+        "name": "Bernfried Gotthard",
+        "phone": "+49(0) 778410095",
+        "birthday": "1980-01-06",
+        "email": "alois02@example.com"
+    },
+    {
+        "name": "Mariechen Sch\u00f6nland-Kreusel",
+        "phone": "+49(0)9549 775616",
+        "birthday": "1980-08-13",
+        "email": "gilbertkrause@example.net"
+    },
+    {
+        "name": "Samuel Hamann B.A.",
+        "phone": "08977 745962",
+        "birthday": "1991-09-22",
+        "email": "mircokruschwitz@example.net"
+    },
+    {
+        "name": "Robert Hande-Henschel",
+        "phone": "+49(0)2599004696",
+        "birthday": "1981-06-04",
+        "email": "blochayten@example.org"
+    },
+    {
+        "name": "Elvira Fischer-Beckmann",
+        "phone": "+49(0)3197923461",
+        "birthday": "1974-06-25",
+        "email": "halina16@example.org"
+    },
+    {
+        "name": "Prof. Meinolf Nette",
+        "phone": "05309 938560",
+        "birthday": "1999-04-28",
+        "email": "eneuschaefer@example.org"
+    },
+    {
+        "name": "Heinz-Georg Fliegner",
+        "phone": "+49(0) 285321557",
+        "birthday": "1993-12-14",
+        "email": "dittmarhuhn@example.org"
+    },
+    {
+        "name": "Annelise Kranz",
+        "phone": "+49(0)1936 547041",
+        "birthday": "2014-10-31",
+        "email": "wolframdrub@example.com"
+    }
+]
