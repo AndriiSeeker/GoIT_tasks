@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "personal-assistant"
+version = "0.2.0"
+description = "bot"
+authors = ["team"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "personal_assistant"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+prompt-toolkit = "^3.0.36"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
