@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "transfer-to-docker"
+version = "0.1.1"
+description = "Assistant"
+authors = ["Your Name <you@example.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "transfer_to_docker"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
