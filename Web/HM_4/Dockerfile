@@ -16,3 +16,5 @@ EXPOSE 3000
 
 # Запустимо нашу програму всередині контейнера
 ENTRYPOINT ["python", "main.py"]
+
+VOLUME ./storage:/storage

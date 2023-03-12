@@ -8,7 +8,7 @@ import mimetypes
 import json
 import logging
 
-BASE_DIR = pathlib.Path(r"D:\programming\Python\GoIT\Web\HM_4\web_app")
+BASE_DIR = pathlib.Path()
 BUFFER_SIZE = 1024
 PORT_HTTP = 3000
 SOCKET_HOST = '127.0.0.1'
@@ -71,12 +71,12 @@ def save_data_from_server(data):
         dict_parse = {key: value for key, value in [el.split('=') for el in parse_data.split('&')]}
         time = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
         try:
-            with open(r'storage\data.json', 'r', encoding='utf-8') as file:
+            with open(r'storage/data.json', 'r', encoding='utf-8') as file:
                 json_content = json.load(file)
         except json.decoder.JSONDecodeError:
             json_content = {}
         json_content.update({time: dict_parse})
-        with open(r'storage\data.json', 'w', encoding='utf-8') as file:
+        with open(r'storage/data.json', 'w', encoding='utf-8') as file:
             json.dump(json_content, file, ensure_ascii=False, indent=4)
             logging.debug(f"Info is written: {dict_parse}")
     except ValueError as err:
@@ -116,7 +116,7 @@ if __name__ == '__main__':
     STORAGE_DIR = pathlib.Path().joinpath('storage')
     FILE_STORAGE = STORAGE_DIR / "data.json"
     if not FILE_STORAGE.exists():
-        with open(r'storage\data.json', 'w', encoding='utf-8') as file:
+        with open(FILE_STORAGE, 'w', encoding='utf-8') as file:
             json.dump({}, file, ensure_ascii=False)
             logging.debug(f"Json file is created")
 
