@@ -1,0 +1,3 @@
+Date sent correctly, taken from https:\api.privatbank.ua\p24api\exchange_rates?json&date=15.03.2023 2023-03-18 21:54:14
+Date sent correctly, taken from https:\api.privatbank.ua\p24api\exchange_rates?json&date=18.03.2023 2023-03-18 21:55:06
+Date sent correctly, taken from https:\api.privatbank.ua\p24api\exchange_rates?json&date=17.03.2023 2023-03-18 21:55:16
