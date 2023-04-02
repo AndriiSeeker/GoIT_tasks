@@ -17,6 +17,6 @@ database = config.get('DEV_DB', 'DB_NAME')
 # URI:  postgresql://username:password@domain:port/database
 URI = f"postgresql://{username}:{password}@{domain}:{port}/{database}"
 
-engine = create_engine('sqlite:///sqlalchemy_example.db')
+engine = create_engine(URI, echo=True)
 DBSession = sessionmaker(bind=engine)
 session = DBSession()

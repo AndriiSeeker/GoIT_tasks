@@ -1,0 +1,5 @@
+SQLAlchemy==2.0.8
+Faker
+alembic
+tabulate
+colorama

@@ -1,5 +1,6 @@
 from datetime import date, datetime, timedelta
 from random import randint, choice
+
 import faker
 from sqlalchemy import select
 from sqlalchemy.exc import SQLAlchemyError
@@ -67,12 +68,12 @@ def seed_grades():
     student_ids = session.scalars(select(Student.id)).all()
 
     for d in d_range:
-        random_id_discipline = choice(subjects_ids)
+        random_id_subject = choice(subjects_ids)
         random_ids_student = [choice(student_ids) for _ in range(5)]
 
         for student_id in random_ids_student:
             grade = Grade(grade=randint(1, 12), date_of=d, student_id=student_id,
-                          discipline_id=random_id_discipline)
+                          subject_id=random_id_subject)
             session.add(grade)
 
 

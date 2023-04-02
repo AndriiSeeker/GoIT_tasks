@@ -39,6 +39,6 @@ class Grade(Base):
     grade = Column(Integer, nullable=False)
     date_of = Column('date_of', Date, nullable=True)
     student_id = Column('student_id', ForeignKey('students.id', ondelete='CASCADE'))
-    discipline_id = Column('discipline_id', ForeignKey('subjects.id', ondelete='CASCADE'))
+    subject_id = Column('subject_id', ForeignKey('subjects.id', ondelete='CASCADE'))
     student = relationship('Student', backref='grade')
-    discipline = relationship('Subject', backref='grade')
+    subject = relationship('Subject', backref='grade')
