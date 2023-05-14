@@ -1,6 +1,5 @@
 from typing import List
 
-from fastapi import Depends
 from fastapi import APIRouter, Depends, Path, HTTPException, status
 from pydantic import EmailStr
 from sqlalchemy.orm import Session

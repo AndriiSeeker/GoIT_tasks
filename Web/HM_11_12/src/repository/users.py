@@ -29,8 +29,4 @@ async def update_token(user: User, token: str | None, db: Session) -> None:
     user.refresh_token = token
     db.commit()
 
-# {
-#     "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhbmRyaXkuQGdtYWlsLmNvbSIsImlhdCI6MTY4MzgwMjQ3OSwiZXhwIjoxNjgzODA2MDc5LCJzY29wZSI6ImFjY2Vzc190b2tlbiJ9.F4WQfcT2UMokt1wLfjqqGDVcbEQMuSpt5-V5CC9e2ks",
-#     "refresh_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhbmRyaXkuQGdtYWlsLmNvbSIsImlhdCI6MTY4MzgwMjQ3OSwiZXhwIjoxNjg0NDA3Mjc5LCJzY29wZSI6InJlZnJlc2hfdG9rZW4ifQ.vriH76DlOAP8xNaY1cJBYNryuKCVe3L6C4e5xJOqUqA",
-#     "token_type": "bearer"
-# }
+

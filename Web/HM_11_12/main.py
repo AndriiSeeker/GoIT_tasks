@@ -6,10 +6,7 @@ from sqlalchemy.orm import Session
 from src.database.db import get_db
 from src.routes import contacts, auth
 
-app = FastAPI()
-
-app.include_router(contacts.router, prefix='/api')
-app.include_router(auth.router, prefix='/api')
+app = FastAPI(swagger_ui_parameters={"operationsSorter": "method"})
 
 
 @app.get("/")
@@ -28,3 +25,7 @@ def healthchecker(db: Session = Depends(get_db)):
     except Exception as e:
         print(e)
         raise HTTPException(status_code=500, detail="Error connecting to the database")
+
+
+app.include_router(auth.router, prefix='/api')
+app.include_router(contacts.router, prefix='/api')
