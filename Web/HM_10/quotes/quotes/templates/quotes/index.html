@@ -1,42 +1,52 @@
-{% extends "quotes/base.html" %}
-{% load extract %}
-{% block main %}
+{% extends 'quotes/base.html' %}
 
-<div class="row">
-    <div class="col-md-8">
+{% block content %}
+<div class="row mb-3">
+    <div class="col-md-8 themed-gris-col">
+        {% if quotes %}
         {% for quote in quotes %}
-        <div class="quote" itemscope="" itemtype="http://schema.org/CreativeWork">
-            <span class="text" itemprop="text">{{ quote.quote }}</span>
-            <span>by <small class="author" itemprop="author">{{ quote.author|author }}</small>
-            <a href="/author/{{ quote.author }}">(about)</a>
-            </span>
-            <div class="tags">
-                Tags:
-                {% for tag in quote.tags %}
-                <a class="tag" href="/tag/{{tag}}">{{tag}}</a>
-                {% endfor %}
+            <div class="quote" itemscope="" itemtype="http://schema.org/CreativeWork">
+                <span class="text" itemprop="text">{{quote.quote}}</span>
+                <span>by <small class="author" itemprop="author">{{quote.author.fullname}}</small>
+                <a href="{% url 'quotes:author_about' quote.author.id %}">(about)</a>
+                </span>
+                <div class="tags">
+                    Tags:
+                    {% for tag in quote.tags.all %}
+                        <a class="tag" href="{% url 'quotes:find_by_tag' tag.id %}">{{tag}}</a>
+                    {% endfor %}
+                </div>
             </div>
-        </div>
         {% endfor %}
-
+        {% else %}
+            <p>NO</p>
+        {% endif %}
         <nav>
             <ul class="pager">
                 <li class="previous">
-                    <a class="{% if not quotes.has_previous %} disabled {% endif %}"
-                       href="{% if quotes.has_previous %} {% url 'quotes:home_paginate' quotes.previous_page_number %} {% else %} # {% endif %}">
-                        <span aria-hidden="true">←</span> Previous
-                    </a>
-                </li>
-
-                <li class="next">
-                    <a class="{% if not quotes.has_next %} disabled {% endif %}"
-                       href="{% if quotes.has_next %} {% url 'quotes:home_paginate' quotes.next_page_number %} {% else %} # {% endif %}">
-                        Next <span aria-hidden="true">→</span>
-                    </a>
-                </li>
+                    {% if quotes.has_previous %}
+                    <a href="?page=1" class="btn btn-light">&laquo; first</a>
+                    <a href="?page={{ quotes.previous_page_number }}" class="btn btn-light">previous</a>
+                    {% endif %}
+                    <span class="current">Page {{ quotes.number }} of {{ quotes.paginator.num_pages }}</span>
+                    {% if quotes.has_next %}
+                    <a href="?page={{ quotes.next_page_number }}" class="btn btn-light">next</a>
+                    <a href="?page={{ quotes.paginator.num_pages }}" class="btn btn-light">last &raquo;</a>
+                    {% endif %}
             </ul>
         </nav>
     </div>
+    <div class="col-md-4 themed-grid-col">
+        <h2>Top 10 Tags</h2>
+        {% for tag in top_ten_tags %}
+        <div class="tags">
+            <a class="tag" href="{% url 'quotes:find_by_tag' tag.tags__name %}">{{tag.tags__name}}</a>
+        </div>
+        {% endfor %}
+
+    </div>
+
 </div>
+
 
 {% endblock %}

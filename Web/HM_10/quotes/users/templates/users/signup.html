@@ -1,45 +1,41 @@
-{% extends "quotes/base.html" %}
+{% extends 'quotes/base1.html' %}
 
-{% block main %}
-<h3>Signup</h3>
+{% block content %}
+
+<h2>SignUp</h2>
 
 {% if form.errors %}
-<span class="alert alert-danger" role="alert">{{form.non_field_errors}}</span>
+<span class="alert alert-danger" role="alert">{{ form.non_field_errors }}</span>
 {% endif %}
 
-<form method="post">
+<form method="post" style="width: 60%;">
     {% csrf_token %}
-    <div class="row mb-3">
-        <label>Username</label>
-        {{form.username}}
-        <span>{{form.errors.username}}</span>
+
+    <div class="row mb-4">
+        <label>Username:</label>
+        {{ form.username }}
+        <span>{{ form.errors.username }}</span>
     </div>
     <div class="row mb-3">
-        <label>First name</label>
-        {{form.first_name}}
-        <span>{{form.errors.first_name}}</span>
-    </div>
-    <div class="row mb-3">
-        <label>Last name</label>
-        {{form.last_name}}
-        <span>{{form.errors.last_name}}</span>
-    </div>
-    <div class="row mb-3">
-        <label>Email</label>
-        {{form.email}}
-        <span>{{form.errors.email}}</span>
+        <label>Email:</label>
+        {{ form.email }}
+        <span>{{ form.errors.email }}</span>
     </div>
     <div class="row mb-3">
         <label>Password:</label>
-        {{form.password1}}
-        <span>{{form.errors.password1}}</span>
+        {{ form.password1 }}
+        <span>{{ form.errors.password1 }}</span>
     </div>
     <div class="row mb-3">
-        <label>Repeat password</label>
-        {{form.password2}}
-        <span>{{form.errors.password2}}</span>
+        <label>Password:</label>
+        {{ form.password2}}
+        <span>{{ form.errors.password2 }}</span>
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-    <button type="reset" class="btn btn-info">Reset</button>
+
+    <div class="d-grid gap-2 col-2 mx-auto">
+        <button type="submit" class="btn btn-primary btn-sm">Submit</button>
+        <button type="reset" class="btn btn-secondary btn-sm">Reset</button>
+    </div>
 </form>
+
 {% endblock %}

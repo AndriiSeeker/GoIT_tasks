@@ -1,0 +1,37 @@
+{% extends "quotes/base1.html" %}
+
+{% block content %}
+<form method="POST" action="{% url 'quotes:add_author' %}">
+    {% csrf_token %}
+    <div class="form-group row">
+        <label for="floatingTextarea" class="col-sm-2 col-form-label">Fullname
+            {{ form.fullname }}
+        </label>
+        <span>{{ form.errors.fullname }}</span>
+    </div>
+    <div class="form-group row">
+        <label for="floatingTextarea" class="col-sm-2 col-form-label">Born Date
+            {{ form.born_date }}
+        </label>
+        <span>{{ form.errors.born_date }}</span>
+    </div>
+    <div class="form-group row">
+        <label for="floatingTextarea" class="col-sm-2 col-form-label">Born Location
+            {{ form.born_location }}
+        </label>
+        <span>{{ form.errors.born_location }}</span>
+    </div>
+    <div class="form-group row">
+        <label for="floatingTextarea" class="col-sm-2 col-form-label">Description
+            {{ form.description }}
+        </label>
+        <span>{{ form.errors.description }}</span>
+    </div>
+    <div class="form-group row">
+        <div class="col-sm-10">
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="reset" class="btn btn-primary">Reset</button>
+        </div>
+    </div>
+</form>
+{% endblock %}

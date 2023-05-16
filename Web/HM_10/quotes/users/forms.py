@@ -1,28 +1,26 @@
+from django import forms
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
-from django.forms import CharField, TextInput, EmailField, EmailInput, PasswordInput
 
 
 class RegisterForm(UserCreationForm):
-    username = CharField(max_length=100, required=True, widget=TextInput(attrs={"class": "form-control"}))
-    first_name = CharField(max_length=100, widget=TextInput(attrs={"class": "form-control"}))
-    last_name = CharField(max_length=100, widget=TextInput(attrs={"class": "form-control"}))
-    email = EmailField(max_length=100, required=True, widget=EmailInput(attrs={"class": "form-control"}))
-    password1 = CharField(max_length=12, min_length=6, required=True,
-                          widget=PasswordInput(attrs={"class": "form-control"}))
-    password2 = CharField(max_length=12, min_length=6, required=True,
-                          widget=PasswordInput(attrs={"class": "form-control"}))
+    username = forms.CharField(max_length=50, required=True, widget=forms.TextInput({'class': 'form-control'}))
+    email = forms.CharField(max_length=100, required=True, widget=forms.EmailInput({'class': 'form-control'}))
+    password1 = forms.CharField(max_length=50, min_length=5, required=True,
+                                widget=forms.PasswordInput({'class': 'form-control'}))
+    password2 = forms.CharField(max_length=50, min_length=5, required=True,
+                                widget=forms.PasswordInput({'class': 'form-control'}))
 
     class Meta:
         model = User
-        fields = ("username", "first_name", "last_name", "email", "password1", "password2")
+        fields = ["username", "email", "password1", "password2"]
 
 
 class LoginForm(AuthenticationForm):
-    username = CharField(max_length=100, required=True, widget=TextInput(attrs={"class": "form-control"}))
-    password = CharField(max_length=12, min_length=6, required=True,
-                         widget=PasswordInput(attrs={"class": "form-control"}))
+    username = forms.CharField(max_length=50, required=True, widget=forms.TextInput({'class': 'form-control'}))
+    password = forms.CharField(max_length=50, min_length=5, required=True,
+                               widget=forms.PasswordInput({'class': 'form-control'}))
 
     class Meta:
         model = User
-        fields = ("username", "password")
+        fields = ["username", "password"]

@@ -1,24 +1,14 @@
-import os
-import sys
-
 from bson import ObjectId
 from django import template
 
-SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-sys.path.append(os.path.dirname(SCRIPT_DIR))
-
-from utils import get_mongo
+from ..models import Author
 
 register = template.Library()
 
 
 def get_author(id_):
-    db = get_mongo()
-    author = db.authors.find_one({'_id': ObjectId(id_)})
-    return author['fullname']
+    obj = Author.objects.filter(id=ObjectId(id_))
+    return obj['fullname'].text
 
 
 register.filter('author', get_author)
-
-if __name__ == '__main__':
-    pass

@@ -1,0 +1,22 @@
+2023-04-27 09:51:01,393 [ERROR] - __main__ -        get_info:21 - [ERROR] HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001654F7254D0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2023-04-27 09:54:48,797 [ERROR] - __main__ -        get_info:23 - [ERROR] ResultSet object has no attribute 'find'. You're probably treating a list of elements like a single element. Did you call find_all() when you meant to call find()?
+2023-04-27 10:16:55,645 [ERROR] - __main__ -        all_urls:50 - [ERROR] can only concatenate str (not "int") to str
+2023-04-27 10:17:23,998 [ERROR] - __main__ -        all_urls:51 - [ERROR] can only concatenate str (not "int") to str
+2023-04-27 11:59:46,740 [ERROR] - quotes.utils.scraper -        get_info:67 - [ERROR] the JSON object must be str, bytes or bytearray, not list
+2023-04-27 12:00:31,146 [ERROR] - quotes.utils.scraper -        get_info:67 - [ERROR] Expecting property name enclosed in double quotes: line 1 column 3 (char 2)
+2023-04-27 12:00:55,476 [ERROR] - quotes.utils.scraper -        get_info:67 - [ERROR] Expecting property name enclosed in double quotes: line 1 column 3 (char 2)
+2023-04-27 12:01:09,452 [ERROR] - quotes.utils.scraper -        get_info:67 - [ERROR] Expecting property name enclosed in double quotes: line 1 column 3 (char 2)
+2023-04-27 12:02:01,406 [ERROR] - quotes.utils.scraper -        get_info:67 - [ERROR] Expecting property name enclosed in double quotes: line 1 column 3 (char 2)
+2023-04-27 12:02:19,552 [ERROR] - quotes.utils.scraper -   get_all_pages:93 - [ERROR] HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000129C72F8550>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2023-04-27 12:02:19,552 [ERROR] - quotes.utils.scraper -        all_urls:80 - [ERROR] unsupported operand type(s) for +: 'NoneType' and 'int'
+2023-04-27 12:02:19,552 [ERROR] - quotes.utils.scraper -        get_info:67 - [ERROR] 'NoneType' object is not iterable
+2023-04-27 12:02:21,585 [ERROR] - quotes.utils.scraper -   get_all_pages:93 - [ERROR] HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000129C72F9410>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2023-04-27 12:02:21,585 [ERROR] - quotes.utils.scraper -        all_urls:80 - [ERROR] unsupported operand type(s) for +: 'NoneType' and 'int'
+2023-04-27 12:02:21,585 [ERROR] - quotes.utils.scraper -        get_info:67 - [ERROR] 'NoneType' object is not iterable
+2023-04-27 12:03:14,399 [ERROR] - __main__ -   get_all_pages:93 - [ERROR] HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000029732E8CBD0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2023-04-27 12:03:14,399 [ERROR] - __main__ -        all_urls:80 - [ERROR] unsupported operand type(s) for +: 'NoneType' and 'int'
+2023-04-27 12:03:14,400 [ERROR] - __main__ -        get_info:67 - [ERROR] 'NoneType' object is not iterable
+2023-04-27 12:03:28,023 [ERROR] - __main__ -   get_all_pages:93 - [ERROR] HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000157847D2ED0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2023-04-27 12:03:28,024 [ERROR] - __main__ -        all_urls:80 - [ERROR] unsupported operand type(s) for +: 'NoneType' and 'int'
+2023-04-27 12:03:28,024 [ERROR] - __main__ -        get_info:67 - [ERROR] 'NoneType' object is not iterable
+2023-04-27 12:27:08,049 [ERROR] - quotes.utils.scraper -        get_info:65 - [ERROR] name 'json_formatted_str' is not defined

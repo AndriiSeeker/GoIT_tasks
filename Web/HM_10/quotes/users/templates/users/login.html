@@ -1,31 +1,45 @@
-{% extends "quotes/base.html" %}
+{% extends 'quotes/base1.html' %}
 
-{% block main %}
-<h3>Login</h3>
+{% block content %}
+
+<h2>LogIn</h2>
 
 {% if form.errors %}
-<span class="alert alert-danger" role="alert">{{form.non_field_errors}}</span>
+    <ul class='form-errors'>
+        {% for error in form.non_field_errors %}
+            <li>{{ error }}</li>
+        {% endfor %}
+    </ul>
 {% endif %}
 
 {% if messages %}
-{% for msg in messages %}
-<span class="alert {%if msg.tags %} alert-{{msg.tags}} {% endif %}" role="alert">{{msg}}</span>
-{% endfor %}
+<div>
+    {% for message in messages %}
+        <div {% if message.tags %} class="alert alert-{{ message.tags }}" {% endif %} role="alert">{{ message }}</div>
+    {% endfor %}
+</div>
 {% endif %}
 
-<form method="post">
+<form method="post" style="width: 60%;">
     {% csrf_token %}
-    <div class="row mb-3">
-        <label for="{{ form.username.id_for_label }}">Username</label>
+
+    <div class="row mb-4">
+        <label>Username:</label>
         {{form.username}}
         <span>{{form.errors.username}}</span>
     </div>
     <div class="row mb-3">
-        <label for="{{ form.password.id_for_label }}">Password:</label>
+        <label>Password:</label>
         {{form.password}}
         <span>{{form.errors.password}}</span>
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-    <button type="reset" class="btn btn-info">Reset</button>
+    <div class="d-grid gap-2 col-2 mx-auto">
+        <button type="submit" class="btn btn-primary btn-sm">Submit</button>
+        <button type="reset" class="btn btn-secondary btn-sm">Reset</button>
+    </div>
+    <div class="small text-center">
+        <a href="{% url "users:password_reset" %}" class="text-center"><i>Forgot Password?</i></a>
+    </div>
 </form>
+
 {% endblock %}

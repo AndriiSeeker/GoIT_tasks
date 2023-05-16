@@ -1,0 +1,8 @@
+{% extends "quotes/base1.html" %}
+
+{% block content %}
+    {% for quote in json_quotes %}
+        <span class="text" itemprop="text">{{quote}}</span>
+        <p></p>
+    {% endfor %}
+{% endblock %}
