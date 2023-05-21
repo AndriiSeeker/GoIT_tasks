@@ -1,7 +1,7 @@
 from sqlalchemy import Column, Integer, String, ForeignKey, func, Table
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
-from sqlalchemy.sql.sqltypes import Date, DateTime
+from sqlalchemy.sql.sqltypes import Date, DateTime, Boolean
 
 base = declarative_base()
 
@@ -25,6 +25,7 @@ class User(base):
     username = Column(String(50))
     email = Column(String(250), nullable=False, unique=True)
     password = Column(String(255), nullable=False)
+    confirmed = Column(Boolean, default=False)
     created_at = Column('crated_at', DateTime, default=func.now())
     avatar = Column(String(255), nullable=True)
     refresh_token = Column(String(255), nullable=True)
