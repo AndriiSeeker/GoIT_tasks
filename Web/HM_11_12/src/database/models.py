@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, ForeignKey, func, Table
+from sqlalchemy import Column, Integer, String, ForeignKey, func
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
 from sqlalchemy.sql.sqltypes import Date, DateTime, Boolean
@@ -22,11 +22,11 @@ class Contact(base):
 class User(base):
     __tablename__ = "users"
     id = Column(Integer, primary_key=True)
-    username = Column(String(50))
-    email = Column(String(250), nullable=False, unique=True)
-    password = Column(String(255), nullable=False)
+    username = Column(String)
+    email = Column(String, nullable=False, unique=True)
+    password = Column(String, nullable=False)
     confirmed = Column(Boolean, default=False)
-    created_at = Column('crated_at', DateTime, default=func.now())
-    avatar = Column(String(255), nullable=True)
-    refresh_token = Column(String(255), nullable=True)
+    created_at = Column('created_at', DateTime, default=func.now())
+    avatar = Column(String, nullable=True)
+    refresh_token = Column(String, nullable=True)
 

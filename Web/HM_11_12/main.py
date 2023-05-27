@@ -28,7 +28,7 @@ async def startup():
 
 
 origins = [
-    "http://195.201.230.150:3000"
+    "*"
 ]
 
 app.add_middleware(
